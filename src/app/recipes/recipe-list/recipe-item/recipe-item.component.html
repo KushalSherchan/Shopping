@@ -1,0 +1,12 @@
+<a class="list-group-item d-flex justify-content-between text-dark"
+   [routerLink]="[index]" 
+   routerLinkActive='ownEffect'>
+    <div class="align-self-left">
+      <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+      <p class="list-group-item-text">{{recipe.description}}</p>
+    </div>
+    <div class="align-self-center">
+      <img [src] = "recipe.imagePath"
+      class="img-fluid rounded-circle" style="max-height:90px; max-width: 110px;" alt="{{recipe.name}}">
+    </div>
+</a>

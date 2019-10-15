@@ -1,0 +1,13 @@
+.makeHover {
+    cursor: pointer;
+}
+
+a{
+    cursor: pointer;
+}
+
+li{
+  text-decoration: none;
+  list-style: none;
+  margin-left: 18px;
+}

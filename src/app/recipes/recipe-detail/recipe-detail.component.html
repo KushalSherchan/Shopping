@@ -1,0 +1,35 @@
+<div class="container">
+<div class="row mt-2">
+  <div class="col-sm-12">
+    <img [src]="DetailFromRecipeItem.imagePath" class="img-fluid"
+    style="max-height:180px"  alt="">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>{{ DetailFromRecipeItem.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1"                      ngbDropdownToggle>Manage Recipe</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="addShopping()">Add Ingredient to shopping List</button>
+        <button ngbDropdownItem (click)="gotoEditRouter()">Edit Recipe</button>
+        <button ngbDropdownItem
+                (click)="deleteRecipe()"> Delete Recipe</button>
+      </div>
+    </div>
+</div>
+</div>
+<div class="row mt-2">
+  <div class="col-sm-12">
+    {{DetailFromRecipeItem.description}}
+  </div>
+</div>
+<ul class="list-group mt-2">
+  <li class="list-group-item" *ngFor="let rec of DetailFromRecipeItem.recipeDesc">
+     {{rec.name}} -> {{rec.amount}}</li>
+</ul>
+</div>

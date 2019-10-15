@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark py-2">
+    <div class="container">
+        <a routerLink="/" class="navbar-brand">Recipe Book</a>
+        <ul class="navbar-nav mr-auto">
+            <li routerLinkActive="active" class="navbar-item">
+                <a routerLink='recipes' class="nav-link"> Recipies</a>
+            </li>
+            <li routerLinkActive="active" class="navbar-item">
+                <a routerLink='shoppingList' class="nav-link">Shopping List</a>
+            </li>
+        </ul>
+
+        <ul *ngIf="authService.isAuthenticated()"
+            ngbDropdown class="navbar-nav text-light">
+            <li class="navbar-item makeHover" id="dropdownBasic1" ngbDropdownToggle>Manage</li>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <a ngbDropdownItem (click)="dataToServer()">Save Data</a>
+              <a ngbDropdownItem
+              (click) = "getDataFromServer()">Fetch Data</a>
+            </div>
+        </ul>
+
+        <li *ngIf="authService.isAuthenticated()"
+            (click)="logout()"
+            class="text-light">
+        <a style="cursor: pointer">LogOut</a></li>
+
+        <ng-template [ngIf]="!authService.isAuthenticated()">
+          <ul class="navbar-nav ml-2">
+            <li class="navbar-item">
+                <a routerLink='/signin'
+                class="nav-link">SignIn</a>
+            </li>
+
+            <li class="navbar-item">
+                <a routerLink='/signup'
+                class="nav-link">Register</a>
+            </li>
+        </ul>
+        </ng-template>
+
+    </div>
+</nav>
+

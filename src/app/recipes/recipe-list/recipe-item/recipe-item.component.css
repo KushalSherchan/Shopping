@@ -1,0 +1,13 @@
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a :hover{
+    text-decoration: none;
+}
+
+.ownEffect{
+    background: #E0E0E0;
+    
+}
